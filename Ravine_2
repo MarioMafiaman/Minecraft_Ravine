@@ -1,0 +1,108 @@
+ravine2 = function () {
+	
+	var myDrone = new Drone (self);
+
+	myDrone.down(40).box(0, 10, 70, 70);
+
+	myDrone.move("start");
+    
+    myDrone.down(30).box(20, 10, 1, 35);
+    
+    myDrone.move("start");
+    
+    myDrone.down(29).right(5).forward(68).box(blocks.gold, 1, 1, 1);
+    
+    myDrone.move("start");
+    
+    myDrone.down(32).box(blocks.lava, 10, 1, 35);
+    
+    myDrone.move("start");
+    
+    myDrone.down(40).fwd(35).box(blocks.water, 10, 10, 35);
+    
+    myDrone.move("start");
+    
+    for(var pad = 0; pad < 3; pad ++){
+        
+        var forwrd = 0;
+        
+        var lft = ;
+        
+        myDrone.down(30).forward(35).forward(forwrd).cyllinder(blocks.grass, 2, 1);
+        
+        myDrone.left(5).forward(8).cyllinder(blocks.grass, 2, 1);
+        
+        forwrd = forwrdw + 12;
+    }
+    
+    for (var Air=0; Air < 35; Air++){
+       var distanceX = parseInt(10 * Math.random() );
+       var distanceZ = parseInt(35 * Math.random() );
+       var blockY = parseInt(Math.random() * 8);
+       myDrone.down(30).fwd(distanceZ).right(distanceX).box(0);
+       myDrone.move("start");
+       
+       
+   }
+    
+    for (var lavaDrip=0; lavaDrip < 7; lavaDrip++){
+       var distanceX = parseInt(10 * Math.random() );
+       var distanceZ = parseInt(35 * Math.random() );
+       var blockY = parseInt(Math.random() * 8);
+       myDrone.down(20).fwd(distanceZ).right(distanceX).box(11);
+       myDrone.down(1).box(blocks.fire);
+       myDrone.move("start");
+       
+       
+   }
+    
+    for (var obstacle = 0; obstacle < 5; obstacle++){
+        
+        //delay here
+        
+        var distanceX = parseInt(6 * Math.random() );
+        
+        var distanceZ = parseInt(35 * Math.random() );
+        
+        myDrone.forward(distancey).right(distanceX).box(blocks.iron, 1, 3, 1);
+        
+        myDrone.right(1).forward(1).box(blocks.iron, 3, 3, 1);
+        
+        myDrone.back(1).right(1).box(blocks.iron, 1, 3, 1);
+        
+        myDrone.move("start");
+        
+    }
+    
+    for (var squids = 0; squids < 5; squids++){
+        var distanceX = parseInt(10 * Math.random() );
+        var distanceZ = parseInt(35 * Math.random() );
+        var distanceY = parseInt(10 * Math.random() );
+        
+        myDrone.down(40).forward(35).right(distanceX).forward(distanceZ).up(distanceY).box(blocks.iron, 1, 3, 1);
+        
+        location = self.location;
+        
+        location.world.spawnEntity(location, org.bukkit.EntityType.SQUID);
+        
+        myDrone.move("start");
+        
+    }
+    
+    for (var bad=0; bad<10; bad++){
+        
+        //delay here
+        
+        location = self.location;
+        
+        location.world.spawnEntity(location, org.bukkit.EntityType.SPIDER);
+
+        
+    }
+    
+    self.location.world.spawnEntity(location, org.bukkit.minecart_mob_spawner);
+    
+}
+
+
+exports.ravine2 = ravine2;
